@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import Board from './Board';
-import { calculateWinner } from '../helpers';
+import Board from '../Board';
+import { calculateWinner } from '../../helpers';
 
 const style = {
 	width: '200px',

@@ -6,14 +6,16 @@ import { ReactComponent as SvgO } from '@mdi/svg/svg/alpha-o.svg';
 
 const style = {
 	alignItems: 'center',
-	background: 'lightblue',
-	border: '2px solid darkblue',
+	background: 'none',
+	border: '0',
 	display: 'flex',
 	fontSize: '2rem',
 	fontWeight: 'bold',
+	height: '100%',
 	justifyContent: 'center',
 	outline: 'none',
 	padding: 0,
+	width: '100%',
 };
 
 const iconStyle = {
