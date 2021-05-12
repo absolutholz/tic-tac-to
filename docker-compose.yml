@@ -12,6 +12,8 @@ services:
     volumes:
       - ./app/src:/app/src
       - ./app/public:/app/public
+      - ./app/package.json:/app/package.json
+      - ./app/yarn.lock:/app/yarn.lock
       # - /node_modules
     environment:
       - NODE_ENV=development
