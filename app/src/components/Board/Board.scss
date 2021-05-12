@@ -1,0 +1,11 @@
+.board {
+	background: black;
+	display: grid;
+	grid-gap: 2px;
+	grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+	height: 250px;
+	list-style: none;
+	margin: 0 auto;
+	padding-left: 0;
+	width: 250px;
+}

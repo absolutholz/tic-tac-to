@@ -36,6 +36,7 @@
     ]
   },
   "devDependencies": {
-    "@mdi/svg": "^5.9.55"
+    "@mdi/svg": "^5.9.55",
+    "sass": "^1.32.13"
   }
 }

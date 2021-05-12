@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 
+import './Game.scss';
+
 import Board from '../Board';
 import { calculateWinner } from '../../helpers';
-
-const style = {
-	width: '200px',
-	margin: '20px auto',
-};
 
 const Game = () => {
 	const [ history, setHistory ] = useState([Array(9).fill(null)]);
@@ -35,7 +32,7 @@ const Game = () => {
 	};
 
 	const renderMoves = () => (
-		<ol start="0">
+		<ol className="game" start="0">
 			{
 				history.map((_step, move) => {
 					const destination = move ? `Go to move #${ move }` : 'Go to start';
@@ -54,7 +51,7 @@ const Game = () => {
 	return (
 		<>
 			<Board squares={ history[stepNumber] } onClick={ handleClick } />
-			<div style={ style }>
+			<div className="game">
 				<p>{ winner ? `Winner: ${ winner }` : `Next Player: ${ (xIsNext ? 'X' : 'O')  }`}</p>
 				{ renderMoves() }
 			</div>

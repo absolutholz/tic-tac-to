@@ -1,25 +1,15 @@
 import React from 'react';
 
-import Square from '../Square';
+import './Board.scss';
 
-const styleGrid = {
-	background: 'black',
-	display: 'grid',
-	gridGap: '2px',
-	gridTemplate: 'repeat(3, 1fr) / repeat(3, 1fr)',
-	height: '250px',
-	listStyle: 'none',
-	margin: '0 auto',
-	paddingLeft: '0',
-	width: '250px',
-};
+import Square from '../Square';
 
 const styleGridItem = {
 	background: '#fff',
 };
 
 const Board = ({ squares, onClick }) => (
-	<ol style={ styleGrid }>
+	<ol className="board">
 		{ squares.map((square, i) => (
 			<li key={ i } style={ styleGridItem }>
 				<Square onClick={ () => onClick(i) } value={ square } />
