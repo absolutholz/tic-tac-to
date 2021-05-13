@@ -1,0 +1,31 @@
+h1 {
+	font-size: 0;
+}
+
+h2 {
+	font-size: var(--typo-size-400);
+	font-weight: var(--typo-weight-400);
+	line-height: var(--typo-line-400);
+	margin: 1rem 0;
+}
+
+h3 {
+	font-size: var(--typo-size-300);
+	font-weight: var(--typo-weight-300);
+	line-height: var(--typo-line-300);
+	margin: 1rem 0;
+}
+
+h4 {
+	font-size: var(--typo-size-200);
+	font-weight: var(--typo-weight-200);
+	line-height: var(--typo-line-200);
+	margin: 1rem 0;
+}
+
+h5 {
+	font-size: var(--typo-size-100);
+	font-weight: var(--typo-weight-100);
+	line-height: var(--typo-line-100);
+	margin: 1rem 0;
+}
