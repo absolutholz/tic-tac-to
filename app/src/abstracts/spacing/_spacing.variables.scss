@@ -1,0 +1,46 @@
+/// Thin (Hairline)
+$weight-hairline: 100;
+/// Extra Light (Ultra Light)
+$weight-extra-light: 200;
+/// Light
+$weight-light: 300;
+/// Normal
+$weight-normal: normal;
+/// Medium
+$weight-medium: 500;
+/// Semi Bold (Demi Bold)
+$weight-semi-bold: 600;
+/// Bold
+$weight-bold: bold;
+/// Extra Bold (Ultra Bold)
+$weight-extra-bold: 800;
+/// Black (Heavy)
+$weight-black: 900;
+
+$size-0: 1.125rem;
+$line-0: 1.6;
+$weight-0: $weight-normal;
+
+// https://type-scale.com/ - Perfect Fourth
+$size-100: calc(#{$size-0} * 1.333);
+$line-100: $line-0;
+$weight-100: $weight-normal;
+
+$size-200: calc(#{$size-0} * 1.777);
+$line-200: calc(#{$line-0} * 0.875);
+$weight-200: $weight-normal;
+
+$size-300: calc(#{$size-0} * 2.369);
+$line-300: calc(#{$line-0} * 0.8125);
+$weight-300: $weight-light;
+
+$size-400: calc(#{$size-0} * 3.157);
+$line-400: calc(#{$line-0} * 0.75);
+$weight-400: $weight-light;
+
+$size-500: calc(#{$size-0} * 4.209);
+$line-500: calc(#{$line-0} * 0.6875);
+$weight-500: $weight-light;
+
+$size-small-100: calc(#{$size-0} * 0.75);
+$line-small-100: $line-0;
