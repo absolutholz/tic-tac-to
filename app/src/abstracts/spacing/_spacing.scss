@@ -1,30 +1,5 @@
-@use "./spacing.variables" as typo;
+// @use "./spacing.variables" as spacing;
 
 :root {
-	--typo-size-0: #{typo.$size-0};
-	--typo-line-0: #{typo.$line-0};
-	--typo-weight-0: #{typo.$weight-0};
-
-	--typo-size-100: #{typo.$size-100};
-	--typo-line-100: #{typo.$line-100};
-	--typo-weight-100: #{typo.$weight-100};
-
-	--typo-size-200: #{typo.$size-200};
-	--typo-line-200: #{typo.$line-200};
-	--typo-weight-200: #{typo.$weight-200};
-
-	--typo-size-300: #{typo.$size-300};
-	--typo-line-300: #{typo.$line-300};
-	--typo-weight-300: #{typo.$weight-300};
-
-	--typo-size-400: #{typo.$size-400};
-	--typo-line-400: #{typo.$line-400};
-	--typo-weight-400: #{typo.$weight-400};
-
-	--typo-size-500: #{typo.$size-500};
-	--typo-line-500: #{typo.$line-500};
-	--typo-weight-500: #{typo.$weight-500};
-
-	--typo-size-small-100: #{typo.$size-small-100};
-	--typo-line-small-100: #{typo.$line-small-100};
+	--gutter: 1rem;
 }
