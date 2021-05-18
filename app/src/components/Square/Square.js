@@ -16,7 +16,7 @@ const Square = ({ value, onClick }) => {
 
 	return (
 		<button
-		className="square"
+			className="square"
 			onClick={onClick}
 		>
 			{ icon }
