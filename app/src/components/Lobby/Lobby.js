@@ -4,15 +4,16 @@ import { usePubNub } from 'pubnub-react';
 import { nanoid } from 'nanoid';
 
 import ButtonList from './../ButtonList';
+import RemoteGame from './../RemoteGame';
 
 const Lobby = ({ username }) => {
 	// const [lobbyChannel, setLobbyChannel] = useState(null);
 	let roomId = null;
 	let lobbyChannel = null;
-	let gameChannel = null;
+	const [gameChannel, setGameChannel] = useState('');
 
 	// const [players, setPlayers] = useState([]);
-	let piece = '';
+	const [ piece, setPiece ] = useState('');
 	// const [isPlaying, setIsPlaying] = useState(false);
 	// const [isDisabled, setIsDisabled] = useState(false);
 	const [isRoomCreator, setIsRoomCreator] = useState(false);
@@ -21,18 +22,21 @@ const Lobby = ({ username }) => {
 
 	const pubnub = usePubNub();
 
+	const startGame = () => {
+		// alert(`Ready to start the game as \r\n Player ${ piece }`);
+		// Create a different channel for the game
+		setGameChannel(`tictactoegame--${roomId}`);
+		// pubnub.subscribe({
+		// 	channels: [gameChannel]
+		// });
+	};
+
 	const listen = () => {
 		pubnub.addListener({
 			message: (msg) => {
-				console.log({ msg });
 				// Start the game once an opponent joins the channel
 				if (msg.message.notRoomCreator) {
-					alert(`Ready to start the game as \r\n Player ${ piece }`);
-					// Create a different channel for the game
-					gameChannel = `tictactoegame--${this.roomId}`;
-					pubnub.subscribe({
-						channels: [gameChannel]
-					});
+					startGame();
 				}
 			}
 		});
@@ -52,7 +56,7 @@ const Lobby = ({ username }) => {
 
 		setIsWaitingForOpponent(true);
 		setIsRoomCreator(true);
-		piece = 'X';
+		setPiece('X');
 
 		listen();
 
@@ -83,7 +87,7 @@ const Lobby = ({ username }) => {
 					// ]);
 					listen();
 
-					piece = 'O';
+					setPiece('O');
 
 					pubnub.publish({
 						message: {
@@ -135,8 +139,7 @@ const Lobby = ({ username }) => {
 
 	return (
 		<div className="lobby">
-
-			{ !isWaitingForOpponent &&
+			{ !gameChannel && !isWaitingForOpponent &&
 				<ButtonList>
 					<button
 						className="button"
@@ -153,7 +156,7 @@ const Lobby = ({ username }) => {
 				</ButtonList>
 			}
 
-			{ isWaitingForOpponent &&
+			{ !gameChannel && isWaitingForOpponent &&
 				<div>
 					<p>Share this code with your friend <span>{ shareableRoomId }</span>
 					</p>
@@ -174,7 +177,9 @@ const Lobby = ({ username }) => {
 				</div>
 			}
 
-
+			{ gameChannel &&
+				<RemoteGame gameChannel={ gameChannel } piece={ piece } />
+			}
 
 
 
