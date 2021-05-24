@@ -2,15 +2,14 @@ import React from 'react';
 
 import PubNub from 'pubnub';
 import { PubNubProvider } from 'pubnub-react';
-import { nanoid } from 'nanoid';
 
 import Lobby from './../components/Lobby';
 
-const username = nanoid(10);
+const username = PubNub.generateUUID();
 
 const pubnub = new PubNub({
-	publishKey: 'pub-c-e8a11eed-a965-40d5-82d3-041bb8bdf242',
-	subscribeKey: 'sub-c-0b67ec46-b48b-11eb-b2e5-0e040bede276',
+	publishKey: process.env.REACT_APP_PUBNUB_PUBLISH_KEY,
+	subscribeKey: process.env.REACT_APP_PUBNUB_SUBSCRIBE_KEY,
 	uuid: username,
 });
 
